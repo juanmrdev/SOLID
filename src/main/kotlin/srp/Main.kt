@@ -2,7 +2,7 @@ package srp
 
 fun main() {
 
-    /**VIOLATED SRP*/
+    /**SUCCESSFUL SRP*/
     val player = GoodPlayer(name = "Juan", level = 100)
     val communicator = GameCommunicator(ApiMessage)
 
@@ -10,11 +10,10 @@ fun main() {
 
     println()/**======================================================================================================*/
 
-    /**SUCCESSFUL SRP*/
+    /**VIOLATED SRP*/
     val badPlayer = BadPlayer(name = "John", level = 20, ApiMessage)
     badPlayer.sendMessage(player = badPlayer, message = "Violated SRP")
 }
-
 
 
 object ApiMessage {

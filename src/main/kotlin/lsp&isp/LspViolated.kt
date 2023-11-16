@@ -1,32 +1,36 @@
 package `lsp&isp`
 
-interface GoodMap {
+import java.lang.IllegalArgumentException
+
+interface BadMap {
     fun createMap()
-}
-
-interface SnowMap: GoodMap {
     fun eventSnow()
-}
-
-interface WindMap: GoodMap {
     fun eventWind()
 }
 
-class GoodSnowMap: SnowMap {
+class BadSnowMap: BadMap {
     override fun createMap() {
         println("Snow map has been created")
     }
     override fun eventSnow() {
         println("Snowstorm is falling!")
     }
+
+    override fun eventWind() {
+        //TODO :(
+    }
 }
 
-class GoodWindMap: WindMap {
+class BadWindMap: BadMap {
     override fun createMap() {
         println("Wind map has been created")
     }
 
     override fun eventWind() {
         println("A hurricane is approaching!")
+    }
+
+    override fun eventSnow() {
+        throw IllegalArgumentException(":(")
     }
 }

@@ -47,6 +47,6 @@ class GoodLolPlayer {
 
     fun userStrongestAbility(goodCharacter: GoodCharacter) {
         totalDamage = goodCharacter.useUltimate(totalDamage)
-        nameCharacter = goodCharacter.getName() ?: ""
+        nameCharacter = goodCharacter.getName()
     }
 }

@@ -14,6 +14,6 @@ class BadGame(
 class ExecuteGameWithPlayers {
 
     fun createMapWithPlayers(numPlayers: Int){
-        println("Map is created with 10 players!")
+        println("Map is created with $numPlayers players!")
     }
 }

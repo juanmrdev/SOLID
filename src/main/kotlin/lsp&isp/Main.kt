@@ -4,7 +4,7 @@ import java.lang.Exception
 
 fun main() {
 
-    /**VIOLATED LCP*/
+    /**VIOLATED LCP & ISP*/
     val badMap = BadWindMap()
     badMap.createMap()
     badMap.eventWind()
@@ -16,7 +16,7 @@ fun main() {
 
     println()/**======================================================================================================*/
 
-    /**SUCCESSFUL LCP*/
+    /**SUCCESSFUL LCP & ISP*/
     val goodMap = GoodSnowMap()
     goodMap.createMap()
     goodMap.eventSnow()

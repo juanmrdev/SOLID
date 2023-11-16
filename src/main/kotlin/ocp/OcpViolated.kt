@@ -18,6 +18,10 @@ class BadMasterYi: BadCharacter {
     override val damage: Int = 10
     val criticalHit = 50
 }
+class MyChampion: BadCharacter {
+    override val damage: Int = 1
+    val hisOwnDamage = 4
+}
 
 
 class BadLolPlayer {
