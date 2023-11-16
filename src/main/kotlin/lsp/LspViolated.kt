@@ -1,5 +1,0 @@
-package lsp
-
-fun main() {
-
-}

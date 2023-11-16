@@ -1,5 +1,0 @@
-package isp
-
-fun main() {
-
-}

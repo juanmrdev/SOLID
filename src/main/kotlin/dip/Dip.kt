@@ -1,5 +1,21 @@
 package dip
 
-fun main() {
+class GoodGame(
+    players: Int,
+    executeGameWithPlayers: ExecuteGoodGameWithPlayers
+) {
+    init {
+        executeGameWithPlayers.createMapWithPlayers(players)
+    }
+}
 
+class ExecuteGoodGameWithPlayers: CreateGame {
+
+    override fun createMapWithPlayers(numPlayers: Int) {
+        println("Map is created with $numPlayers players!")
+    }
+}
+
+interface CreateGame {
+    fun createMapWithPlayers(numPlayers: Int)
 }
