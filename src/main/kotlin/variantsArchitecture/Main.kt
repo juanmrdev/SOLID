@@ -11,7 +11,7 @@ import variantsArchitecture.viewmodels.DummyScreenViewModel
 
 fun main() {
     val (dummyScreenMapper, variation) =
-        FactoryDummyScreenUiMapper.invoke(VARIATION_Y)
+        FactoryDummyScreenUiMapper(VARIATION_Y)
 
     val viewModel = DummyScreenViewModel(dummyScreenMapper, variation)
 

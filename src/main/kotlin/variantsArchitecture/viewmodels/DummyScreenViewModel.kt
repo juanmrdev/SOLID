@@ -2,7 +2,7 @@ package variantsArchitecture.viewmodels
 
 import variantsArchitecture.Variations
 import variantsArchitecture.domain.DomainData
-import variantsArchitecture.domain.DomainData.DummyScreenDomainData
+import variantsArchitecture.domain.DomainData.*
 import variantsArchitecture.uimappers.DummyScreenUiMapper
 import variantsArchitecture.models.DummyScreenUiModel
 
@@ -14,7 +14,7 @@ class DummyScreenViewModel(
     private lateinit var uiModelList: List<DummyScreenUiModel>
 
     private var domainData: DummyScreenDomainData
-    private var domainDataComposed: DomainData.DummyScreenDomainDataComposed
+    private var domainDataComposed: DummyScreenDomainDataComposed
 
     init {
         domainData = getDomainData()
@@ -50,7 +50,7 @@ class DummyScreenViewModel(
         data12 = "data12",
     )
 
-    private fun getDomainDataComposed() = DomainData.DummyScreenDomainDataComposed(
+    private fun getDomainDataComposed() = DummyScreenDomainDataComposed(
         domainData = domainData,
         newData = "newData"
     )
