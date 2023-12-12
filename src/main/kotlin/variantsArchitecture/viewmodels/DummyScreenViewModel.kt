@@ -8,22 +8,17 @@ import variantsArchitecture.models.DummyScreenUiModel
 
 class DummyScreenViewModel(
     private val dummyScreenUIMapper: DummyScreenUiMapper<DomainData, DummyScreenUiModel>,
-    variations: Variations
+    variation: Variations
 ) : VariationXViewModel by VariationXViewModelImpl() {
 
     private lateinit var uiModelList: List<DummyScreenUiModel>
 
-    private var domainData: DummyScreenDomainData
-    private var domainDataComposed: DummyScreenDomainDataComposed
-
     init {
-        domainData = getDomainData()
-        domainDataComposed = getDomainDataComposed()
         initVariation(
-            when(variations) {
-                Variations.VARIATION_X -> domainData
-                Variations.VARIATION_Y -> domainDataComposed
-                Variations.VARIATION_Z -> domainData
+            when(variation) {
+                Variations.VARIATION_X -> getDomainData()
+                Variations.VARIATION_Y -> getDomainDataComposed()
+                Variations.VARIATION_Z -> getDomainData()
             }
         )
     }
@@ -33,6 +28,7 @@ class DummyScreenViewModel(
     }
 
     fun getUiDataList() = uiModelList
+
 
     private fun getDomainData() = DummyScreenDomainData(
         data = "data",
@@ -51,7 +47,7 @@ class DummyScreenViewModel(
     )
 
     private fun getDomainDataComposed() = DummyScreenDomainDataComposed(
-        domainDataLegacy = domainData,
+        domainDataLegacy = getDomainData(),
         newData = "newData"
     )
 }

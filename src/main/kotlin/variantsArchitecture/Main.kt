@@ -30,7 +30,7 @@ object FactoryDummyScreenUiMapper {
         }
     }
 }
-enum class Variations {
+enum class Variations() {
     VARIATION_X,
     VARIATION_Y,
     VARIATION_Z
