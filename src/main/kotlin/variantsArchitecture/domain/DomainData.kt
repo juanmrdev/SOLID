@@ -19,7 +19,7 @@ sealed interface DomainData {
     ) : DomainData
 
     data class DummyScreenDomainDataComposed(
-        val domainData: DummyScreenDomainData,
+        val domainDataLegacy: DummyScreenDomainData,
         val newData: String
     ) : DomainData
 }

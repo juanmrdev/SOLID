@@ -2,48 +2,38 @@ package variantsArchitecture.uimappers
 
 import variantsArchitecture.domain.DomainData.*
 import variantsArchitecture.models.DummyScreenUiModel
+import variantsArchitecture.models.DummyScreenUiModel.*
 
 class ScreenUIMapperVariationY(
     param1: String,
     param2: String
 ): BaseDummyScreenUIMapper<DummyScreenDomainDataComposed, DummyScreenUiModel>(param1, param2) {
 
-    override fun injectUiItemList(domainData: DummyScreenDomainDataComposed): List<DummyScreenUiModel> {
-        return mutableListOf<DummyScreenUiModel>().apply {
-            add(getSectionHeader(domainData = domainData))
-            add(DummyScreenUiModel.Separator)
-            add(getSectionOne(domainData = domainData))
-            add(DummyScreenUiModel.Separator)
-            add(getSectionTwo(domainData = domainData))
-            add(DummyScreenUiModel.Separator)
-            add(getSectionFooter(domainData = domainData))
-        }
-    }
+    override fun getSeparator(): DummyScreenUiModel = Separator
 
     override fun injectHeader(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel =
-        DummyScreenUiModel.SectionHeader(data = domainData.domainData.data)
+        SectionHeader(data = domainData.domainDataLegacy.data)
 
-
-    override fun injectSectionTwo(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel =
-        DummyScreenUiModel.SectionTwo(
-            data7 = domainData.domainData.data7,
-            data8 = domainData.domainData.data8,
-            data9 = domainData.domainData.data9
+    override fun injectSectionTwo(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel = domainData.run {
+        SectionTwo(
+            data7 = domainDataLegacy.data7,
+            data8 = domainDataLegacy.data8,
+            data9 = domainDataLegacy.data9
         )
+    }
 
-    override fun getSectionOne(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel =
-        DummyScreenUiModel.SectionTwo(
-            data7 = domainData.domainData.data7,
-            data8 = domainData.domainData.data8,
-            data9 = domainData.domainData.data9
+    override fun getSectionOne(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel = domainData.run {
+        SectionOneVariationY(
+            data4 = domainDataLegacy.data4,
+            data5 = domainDataLegacy.data5,
+            data6 = domainDataLegacy.data6
         )
+    }
 
-    override fun getSectionFooter(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel {
-        domainData.run {
-            return DummyScreenUiModel.SectionFooterVariationY(
-                data11 = this.domainData.data11,
-                data12 = this.domainData.data12
-            )
-        }
+    override fun getSectionFooter(domainData: DummyScreenDomainDataComposed): DummyScreenUiModel = domainData.run {
+        SectionFooterVariationY(
+            data11 = domainDataLegacy.data11,
+            data12 = domainDataLegacy.data12
+        )
     }
 }

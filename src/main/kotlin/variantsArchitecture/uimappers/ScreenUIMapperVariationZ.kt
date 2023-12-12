@@ -21,4 +21,6 @@ class ScreenUIMapperVariationZ : DummyScreenUiMapper<DummyScreenDomainDataCompos
         }
     }
 
+    override fun getSeparator(): DummyScreenUiModel = DummyScreenUiModel.Separator
+
 }

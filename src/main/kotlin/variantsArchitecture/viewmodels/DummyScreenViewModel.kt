@@ -51,7 +51,7 @@ class DummyScreenViewModel(
     )
 
     private fun getDomainDataComposed() = DummyScreenDomainDataComposed(
-        domainData = domainData,
+        domainDataLegacy = domainData,
         newData = "newData"
     )
 }
