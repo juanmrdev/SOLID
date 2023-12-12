@@ -11,10 +11,10 @@ class ScreenUIMapperVariationX(
 
     override fun getSeparator(): DummyScreenUiModel = Separator
 
-    override fun injectHeader(domainData: DummyScreenDomainData): DummyScreenUiModel =
+    override fun getSectionHeader(domainData: DummyScreenDomainData): DummyScreenUiModel =
         SectionHeader(data = domainData.data)
 
-    override fun injectSectionTwo(domainData: DummyScreenDomainData): DummyScreenUiModel = domainData.run {
+    override fun getSectionTwo(domainData: DummyScreenDomainData): DummyScreenUiModel = domainData.run {
         SectionTwo(
             data7 = domainData.data7,
             data8 = domainData. data8,

@@ -7,8 +7,6 @@ abstract class BaseDummyScreenUIMapper<T: DomainData, out R: DummyScreenUiModel>
     param1: String,
     param2: String
 ) : DummyScreenUiMapperWithOneAndFooter<T, R> {
-    abstract fun injectHeader(domainData: T): R
-    abstract fun injectSectionTwo(domainData: T): R
 
     override fun getUiItemList(domainData: T): List<R> {
         return mutableListOf<R>().apply {
@@ -22,7 +20,7 @@ abstract class BaseDummyScreenUIMapper<T: DomainData, out R: DummyScreenUiModel>
         }
     }
 
-    private fun getSectionHeader(domainData: T): R = injectHeader(domainData)
+    abstract fun getSectionHeader(domainData: T): R
 
-    private fun getSectionTwo(domainData: T): R = injectSectionTwo(domainData)
+    abstract fun getSectionTwo(domainData: T): R
 }
