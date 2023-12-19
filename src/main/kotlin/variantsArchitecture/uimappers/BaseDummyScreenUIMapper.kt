@@ -10,17 +10,25 @@ abstract class BaseDummyScreenUIMapper<T: DomainData, out R: DummyScreenUiModel>
 
     override fun getUiItemList(domainData: T): List<R> {
         return mutableListOf<R>().apply {
-            add(getSectionHeader(domainData = domainData))
+            //add(getSectionHeader(domainData = domainData))
             add(getSeparator())
             add(getSectionOne(domainData = domainData))
             add(getSeparator())
-            add(getSectionTwo(domainData = domainData))
+            //add(getSectionTwo(domainData = domainData))
             add(getSeparator())
             add(getSectionFooter(domainData = domainData))
         }
     }
 
-    abstract fun getSectionHeader(domainData: T): R
+    private fun getSectionHeader(domainData: DomainData.DummyScreenDomainData): DummyScreenUiModel {
+        return DummyScreenUiModel.SectionHeader(data = domainData.data)
+    }
 
-    abstract fun getSectionTwo(domainData: T): R
+    private fun getSectionTwo(domainData: DomainData.DummyScreenDomainData): DummyScreenUiModel = domainData.run {
+        DummyScreenUiModel.SectionTwo(
+            data7 = data7,
+            data8 = data8,
+            data9 = data9
+        )
+    }
 }

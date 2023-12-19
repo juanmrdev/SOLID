@@ -18,17 +18,6 @@ sealed interface DummyScreenUiModel {
         val data6: String
     ): DummyScreenUiModel
 
-    /**
-     * Composition option
-     */
-    /*data class SectionOneVariationY(
-        val data4: String,
-        val data5: String,
-        val data6: String,
-        private val sectionOneVariationX: SectionOneVariationX,
-        val data1: String = sectionOneVariationX.data1
-    ): DummyScreenUiModel*/
-
     data class SectionTwo(
         val data7: String,
         val data8: String,

@@ -2,7 +2,7 @@ package solid.dip
 
 class GoodGame(
     players: Int,
-    executeGameWithPlayers: ExecuteGoodGameWithPlayers
+    executeGameWithPlayers: CreateGame
 ) {
     init {
         executeGameWithPlayers.createMapWithPlayers(players)

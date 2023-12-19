@@ -1,8 +1,9 @@
-package variantsArchitecture.uimappers
+package variantsArchitecture.uimappers.firstScreen
 
 import variantsArchitecture.models.DummyScreenUiModel
 import variantsArchitecture.models.DummyScreenUiModel.*
 import variantsArchitecture.domain.DomainData.DummyScreenDomainData
+import variantsArchitecture.uimappers.BaseDummyScreenUIMapper
 
 class ScreenUIMapperVariationX(
     param1: String,
@@ -10,17 +11,6 @@ class ScreenUIMapperVariationX(
 ) : BaseDummyScreenUIMapper<DummyScreenDomainData, DummyScreenUiModel>(param1, param2) {
 
     override fun getSeparator(): DummyScreenUiModel = Separator
-
-    override fun getSectionHeader(domainData: DummyScreenDomainData): DummyScreenUiModel =
-        SectionHeader(data = domainData.data)
-
-    override fun getSectionTwo(domainData: DummyScreenDomainData): DummyScreenUiModel = domainData.run {
-        SectionTwo(
-            data7 = domainData.data7,
-            data8 = domainData. data8,
-            data9 = domainData.data9
-        )
-    }
 
     override fun getSectionOne(domainData: DummyScreenDomainData): DummyScreenUiModel = domainData.run {
         SectionOneVariationX(
@@ -33,4 +23,6 @@ class ScreenUIMapperVariationX(
     override fun getSectionFooter(domainData: DummyScreenDomainData): DummyScreenUiModel = domainData.run {
         SectionFooterVariationX(data10 = data10)
     }
+
+
 }

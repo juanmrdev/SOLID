@@ -23,6 +23,9 @@ class DummyScreenViewModel(
         )
     }
 
+    // ME LLAMARA DANI PARA ORAR, ESPERENME :3
+
+    //STRATEGY TRIGGERED
     private fun initVariation(domainVariation: DomainData) {
         uiModelList = dummyScreenUIMapper.getUiItemList(domainVariation)
     }
